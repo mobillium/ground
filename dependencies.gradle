@@ -10,7 +10,8 @@ ext.deps = [
         gradle_plugins: [
                 android: "com.android.tools.build:gradle:4.0.2",
                 kotlin: "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10",
-                ktlint: "org.jlleitschuh.gradle:ktlint-gradle:9.3.0"
+                ktlint: "org.jlleitschuh.gradle:ktlint-gradle:9.3.0",
+                spotless: "com.diffplug.spotless:spotless-plugin-gradle:3.27.1"
         ],
 
         kotlin: [
