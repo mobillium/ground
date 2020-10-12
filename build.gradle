@@ -21,3 +21,11 @@ allprojects {
         jcenter()
     }
 }
+
+task installGitHook(type: Copy) {
+    from new File(rootProject.rootDir, 'scripts/git-hooks/pre-commit.sh')
+    into { new File(rootProject.rootDir, '.git/hooks') }
+    fileMode 0777
+}
+
+tasks.getByPath(':sample:preBuild').dependsOn installGitHook
