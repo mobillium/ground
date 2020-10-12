@@ -1,0 +1,36 @@
+ext.module_package_id = "${module_group}.${module_name}"
+
+apply plugin: "kotlin-android"
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: rootProject.file("dependencies.gradle")
+
+android {
+    compileSdkVersion versions.compile_sdk
+    buildToolsVersion versions.build_tools
+
+    defaultConfig {
+        minSdkVersion versions.min_sdk
+        targetSdkVersion versions.compile_sdk
+        versionCode versions.publish_version_code
+        versionName versions.publish_version
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    dataBinding {
+        enabled = true
+        enabledForTests = true
+    }
+}
