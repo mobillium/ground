@@ -23,7 +23,7 @@ allprojects {
 }
 
 task installGitHook(type: Copy) {
-    from new File(rootProject.rootDir, 'scripts/git-hooks/pre-commit.sh')
+    from new File(rootProject.rootDir, 'scripts/git-hooks/pre-commit')
     into { new File(rootProject.rootDir, '.git/hooks') }
     fileMode 0777
 }
