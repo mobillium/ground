@@ -1,4 +1,4 @@
-ext.module_group = "com.mobillium"
+ext.module_group = "com.mobillium.ground"
 ext.module_name = "core"
 
 apply from: rootProject.file("gradle/android_library_config.gradle")
