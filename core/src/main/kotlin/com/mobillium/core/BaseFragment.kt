@@ -48,7 +48,7 @@ import com.mobillium.core.markers.ViewState
  */
 @Suppress("MemberVisibilityCanBePrivate")
 abstract class BaseFragment<VDB : ViewDataBinding, VM : BaseViewModel>(
-  @LayoutRes private val layoutId: Int
+    @LayoutRes private val layoutId: Int
 ) : Fragment(), CanFetchExtras, CanHandleNewIntent, CanHandleBackPressEvents, CanManageState {
 
     /**
@@ -97,9 +97,9 @@ abstract class BaseFragment<VDB : ViewDataBinding, VM : BaseViewModel>(
     }
 
     final override fun onCreateView(
-      inflater: LayoutInflater,
-      container: ViewGroup?,
-      savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         return initView(inflater, container, savedInstanceState)
     }
@@ -146,7 +146,8 @@ abstract class BaseFragment<VDB : ViewDataBinding, VM : BaseViewModel>(
      * @param extras the bundle of arguments
      */
     @CallSuper
-    override fun fetchExtras(extras: Bundle) {}
+    override fun fetchExtras(extras: Bundle) {
+    }
 
     // endregion
 
@@ -156,7 +157,8 @@ abstract class BaseFragment<VDB : ViewDataBinding, VM : BaseViewModel>(
      * Gets called from [BaseActivity.handleNewIntent].
      */
     @CallSuper
-    override fun handleNewIntent(intent: Intent) {}
+    override fun handleNewIntent(intent: Intent) {
+    }
 
     // endregion
 
@@ -236,9 +238,9 @@ abstract class BaseFragment<VDB : ViewDataBinding, VM : BaseViewModel>(
     protected open fun onRegisterObservables() {}
 
     private fun initView(
-      inflater: LayoutInflater,
-      container: ViewGroup?,
-      savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         if (!isViewCreated) {
             if (isDataBindingEnabled) {

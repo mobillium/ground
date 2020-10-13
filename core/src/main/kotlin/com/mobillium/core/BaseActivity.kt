@@ -46,7 +46,7 @@ import com.mobillium.core.markers.ViewState
  */
 @Suppress("MemberVisibilityCanBePrivate")
 abstract class BaseActivity<VDB : ViewDataBinding, VM : BaseViewModel>(
-  @LayoutRes private val layoutId: Int
+    @LayoutRes private val layoutId: Int
 ) : AppCompatActivity(), CanFetchExtras, CanHandleNewIntent, CanManageState {
 
     /**

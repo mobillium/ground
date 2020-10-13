@@ -40,7 +40,7 @@ import com.mobillium.core.utils.Event
  * @param defaultViewState the default view state will be delivered
  */
 abstract class BaseViewModel(
-  defaultViewState: ViewState? = null
+    defaultViewState: ViewState? = null
 ) : ViewModel(), ViewModelLifecycle, CanManageState, CanHandleBackPressEvents {
 
     /**
