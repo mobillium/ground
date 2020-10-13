@@ -1,0 +1,11 @@
+ext.module_group = "com.mobillium"
+ext.module_name = "core"
+
+apply from: rootProject.file("gradle/android_library_config.gradle")
+
+dependencies {
+    implementation deps.kotlin.stdlib
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.core_ktx
+    implementation deps.androidx.lifecycle_livedata_ktx
+}
