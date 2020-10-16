@@ -14,24 +14,21 @@
  * limitations under the License.
  */
 
-package com.mobillium.core.markers
+package com.mobillium.ground.sample.navigation
 
-import android.content.Intent
+import com.mobillium.ground.R
+import com.mobillium.ground.databinding.ActivityNavigationBinding
+import com.mobillium.ground.sample.navigation.core.BaseActivity
 
 /**
  * @author @karacca
  * @since 1.0.0
  */
 
-/**
- * An interface used to indicate the support for the new [Intent]s passed to a particular [android.app.Activity].
- */
-interface CanHandleNewIntent {
+class NavigationActivity : BaseActivity<ActivityNavigationBinding, NavigationViewModel>(
+    layoutId = R.layout.activity_navigation,
+    navigationGraphId = R.navigation.nav_graph
+) {
 
-    /**
-     * Processes the specified [Intent].
-     *
-     * @param intent the message intent
-     */
-    fun handleNewIntent(intent: Intent)
+    override fun createViewModel() = NavigationViewModel()
 }

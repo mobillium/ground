@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package com.mobillium.core.markers
+package com.mobillium.navigation.ext
 
-import android.content.Intent
+import android.os.Bundle
+import androidx.navigation.NavArgument
+import androidx.navigation.NavGraph
 
 /**
  * @author @karacca
@@ -24,14 +26,20 @@ import android.content.Intent
  */
 
 /**
- * An interface used to indicate the support for the new [Intent]s passed to a particular [android.app.Activity].
+ * Extracts all the arguments present in the specified [Bundle]
+ * and adds them to the specified [NavGraph].
+ *
+ * @param extras a bundle of arguments
  */
-interface CanHandleNewIntent {
+internal fun NavGraph.addExtras(extras: Bundle) {
+    for (key in extras.keySet()) {
+        this.addArgument(key, newNavArgument(extras.get(key)))
+    }
+}
 
-    /**
-     * Processes the specified [Intent].
-     *
-     * @param intent the message intent
-     */
-    fun handleNewIntent(intent: Intent)
+private fun newNavArgument(value: Any?): NavArgument {
+    return NavArgument.Builder()
+        .setDefaultValue(value)
+        .setIsNullable(value == null)
+        .build()
 }

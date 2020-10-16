@@ -198,7 +198,8 @@ abstract class BaseActivity<VDB : ViewDataBinding, VM : BaseViewModel>(
     protected open fun onRoute(route: Route) {}
 
     /**
-     * Gets called when it's the right time to register the [ObservableField]s of your [androidx.lifecycle.ViewModel].
+     * Gets called when it's the right time to register the [ObservableField]s
+     * of your [androidx.lifecycle.ViewModel].
      */
     protected open fun onRegisterObservables() {}
 

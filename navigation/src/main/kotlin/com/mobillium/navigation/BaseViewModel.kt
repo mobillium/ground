@@ -14,24 +14,31 @@
  * limitations under the License.
  */
 
-package com.mobillium.core.markers
+package com.mobillium.navigation
 
 import android.os.Bundle
+import androidx.annotation.IdRes
+import androidx.navigation.NavDirections
+import com.mobillium.core.BaseViewModel
+import com.mobillium.core.markers.ViewState
 
 /**
  * @author @karacca
  * @since 1.0.0
  */
 
-/**
- * An interface used to indicate the support for handling of the arguments passed in a [Bundle].
- */
-interface CanFetchExtras {
+@Suppress("MemberVisibilityCanBePrivate")
+abstract class BaseViewModel(
+    defaultViewState: ViewState? = null
+) : BaseViewModel(defaultViewState) {
 
-    /**
-     * Fetches the extra arguments passed inside a [Bundle].
-     *
-     * @param extras a bundle of arguments
-     */
-    fun fetchExtras(extras: Bundle)
+    protected fun navigate(directions: NavDirections) =
+        route(NavigationRoute.NavigateTo(directions))
+
+    protected fun navigateBack(
+        @IdRes destination: Int? = null,
+        result: Bundle? = null
+    ) = route(NavigationRoute.NavigateBack(destination, result))
+
+    protected fun popBackStack() = navigateBack()
 }

@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-package com.mobillium.core.markers
+package com.mobillium.navigation
 
-import android.content.Intent
+import android.os.Bundle
+import androidx.annotation.IdRes
+import androidx.navigation.NavDirections
+import com.mobillium.core.markers.Route
 
 /**
  * @author @karacca
  * @since 1.0.0
  */
 
-/**
- * An interface used to indicate the support for the new [Intent]s passed to a particular [android.app.Activity].
- */
-interface CanHandleNewIntent {
+sealed class NavigationRoute : Route {
 
-    /**
-     * Processes the specified [Intent].
-     *
-     * @param intent the message intent
-     */
-    fun handleNewIntent(intent: Intent)
+    data class NavigateTo(val directions: NavDirections) : NavigationRoute()
+
+    data class NavigateBack(
+        @IdRes val destination: Int? = null,
+        val result: Bundle? = null
+    ) : NavigationRoute()
 }

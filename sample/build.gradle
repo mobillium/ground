@@ -2,10 +2,13 @@ ext.module_group = "com.mobillium.ground"
 ext.module_name = "sample"
 
 apply from: rootProject.file("gradle/android_application_config.gradle")
+apply plugin: "androidx.navigation.safeargs"
 
 dependencies {
-    implementation project(':core')
+    implementation project(':navigation')
     implementation deps.kotlin.stdlib
     implementation deps.androidx.appcompat
     implementation deps.androidx.core_ktx
+    implementation deps.androidx.navigation_fragment_ktx
+    implementation deps.androidx.navigation_ui_ktx
 }

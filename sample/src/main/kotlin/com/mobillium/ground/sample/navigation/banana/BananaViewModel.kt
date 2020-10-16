@@ -14,24 +14,18 @@
  * limitations under the License.
  */
 
-package com.mobillium.core.markers
+package com.mobillium.ground.sample.navigation.banana
 
-import android.content.Intent
+import com.mobillium.navigation.BaseViewModel
 
 /**
  * @author @karacca
  * @since 1.0.0
  */
 
-/**
- * An interface used to indicate the support for the new [Intent]s passed to a particular [android.app.Activity].
- */
-interface CanHandleNewIntent {
+class BananaViewModel : BaseViewModel() {
 
-    /**
-     * Processes the specified [Intent].
-     *
-     * @param intent the message intent
-     */
-    fun handleNewIntent(intent: Intent)
+    fun navigateToApple() {
+        navigate(BananaFragmentDirections.bananaToApple())
+    }
 }

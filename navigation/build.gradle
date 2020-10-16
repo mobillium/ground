@@ -9,4 +9,6 @@ dependencies {
     implementation deps.androidx.appcompat
     implementation deps.androidx.core_ktx
     implementation deps.androidx.lifecycle_livedata_ktx
+    implementation deps.androidx.navigation_fragment_ktx
+    implementation deps.androidx.navigation_ui_ktx
 }

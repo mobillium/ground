@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/banana">
+
+    <fragment
+        android:id="@+id/banana"
+        android:name="com.mobillium.ground.sample.navigation.banana.BananaFragment">
+        <action
+            android:id="@+id/banana_to_apple"
+            app:destination="@id/apple"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/apple"
+        android:name="com.mobillium.ground.sample.navigation.apple.AppleFragment"/>
+
+</navigation>

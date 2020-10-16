@@ -14,24 +14,26 @@
  * limitations under the License.
  */
 
-package com.mobillium.core.markers
+package com.mobillium.ground.sample.navigation.banana
 
-import android.content.Intent
+import android.os.Bundle
+import com.mobillium.ground.R
+import com.mobillium.ground.databinding.FragmentBananaBinding
+import com.mobillium.navigation.BaseFragment
 
 /**
  * @author @karacca
  * @since 1.0.0
  */
 
-/**
- * An interface used to indicate the support for the new [Intent]s passed to a particular [android.app.Activity].
- */
-interface CanHandleNewIntent {
+class BananaFragment : BaseFragment<FragmentBananaBinding, BananaViewModel>(
+    layoutId = R.layout.fragment_banana
+) {
 
-    /**
-     * Processes the specified [Intent].
-     *
-     * @param intent the message intent
-     */
-    fun handleNewIntent(intent: Intent)
+    override fun createViewModel() = BananaViewModel()
+
+    override fun init(savedInstanceState: Bundle?) {
+        super.init(savedInstanceState)
+        val a = 0
+    }
 }
