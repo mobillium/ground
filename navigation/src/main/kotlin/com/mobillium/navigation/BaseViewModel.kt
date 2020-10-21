@@ -40,5 +40,5 @@ abstract class BaseViewModel(
         result: Bundle? = null
     ) = route(NavigationRoute.NavigateBack(destination, result))
 
-    protected fun popBackStack() = navigateBack()
+    fun popBackStack() = navigateBack()
 }

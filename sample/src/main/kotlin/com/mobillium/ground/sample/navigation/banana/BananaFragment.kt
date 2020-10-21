@@ -17,9 +17,11 @@
 package com.mobillium.ground.sample.navigation.banana
 
 import android.os.Bundle
+import android.widget.Toast
 import com.mobillium.ground.R
 import com.mobillium.ground.databinding.FragmentBananaBinding
-import com.mobillium.navigation.BaseFragment
+import com.mobillium.ground.sample.navigation.core.BaseFragment
+import com.mobillium.navigation.markers.NavigationResult
 
 /**
  * @author @karacca
@@ -28,12 +30,15 @@ import com.mobillium.navigation.BaseFragment
 
 class BananaFragment : BaseFragment<FragmentBananaBinding, BananaViewModel>(
     layoutId = R.layout.fragment_banana
-) {
+), NavigationResult {
 
     override fun createViewModel() = BananaViewModel()
 
-    override fun init(savedInstanceState: Bundle?) {
-        super.init(savedInstanceState)
-        val a = 0
+    override fun onNavigationResult(result: Bundle) {
+        Toast.makeText(
+            requireContext(),
+            "result: ${result["result"]}",
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }

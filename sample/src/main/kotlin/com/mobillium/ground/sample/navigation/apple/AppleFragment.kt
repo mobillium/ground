@@ -18,7 +18,7 @@ package com.mobillium.ground.sample.navigation.apple
 
 import com.mobillium.ground.R
 import com.mobillium.ground.databinding.FragmentAppleBinding
-import com.mobillium.navigation.BaseFragment
+import com.mobillium.ground.sample.navigation.core.BaseFragment
 
 /**
  * @author @karacca

@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
-package com.mobillium.ground.sample.navigation.apple
+package com.mobillium.ground.sample.navigation.core
 
-import androidx.core.os.bundleOf
+import androidx.annotation.LayoutRes
+import androidx.databinding.ViewDataBinding
+import com.mobillium.core.markers.Route
+import com.mobillium.ground.BR
+import com.mobillium.navigation.BaseFragment
 import com.mobillium.navigation.BaseViewModel
 
 /**
@@ -24,8 +28,14 @@ import com.mobillium.navigation.BaseViewModel
  * @since 1.0.0
  */
 
-class AppleViewModel : BaseViewModel() {
+abstract class BaseFragment<VDB : ViewDataBinding, VM : BaseViewModel>(
+    @LayoutRes private val layoutId: Int
+) : BaseFragment<VDB, VM>(layoutId) {
 
-    fun navigateBackWithResult() =
-        navigateBack(result = bundleOf("result" to "apple"))
+    override val bindingVariable: Int
+        get() = BR.viewModel
+
+    override fun onRoute(route: Route) {
+        super.onRoute(route)
+    }
 }

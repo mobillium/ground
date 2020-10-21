@@ -55,6 +55,11 @@ abstract class BaseFragment<VDB : ViewDataBinding, VM : BaseViewModel>(
     protected fun popBackStack() = navigateBack(null, null)
 
     override fun onRoute(route: Route) {
-        super.onRoute(route)
+        if (route is NavigationRoute) {
+            when (route) {
+                is NavigationRoute.NavigateTo -> navigate(route.directions)
+                is NavigationRoute.NavigateBack -> navigateBack(route.destination, route.result)
+            }
+        }
     }
 }
