@@ -1,7 +1,7 @@
 ext.module_group = "com.mobillium.ground"
 ext.module_name = "sample"
 
-apply from: rootProject.file("gradle/android_application_config.gradle")
+apply from: rootProject.file("gradle/application.gradle")
 apply plugin: "androidx.navigation.safeargs"
 
 dependencies {

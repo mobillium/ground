@@ -1,7 +1,8 @@
 ext.module_group = "com.mobillium.ground"
 ext.module_name = "navigation"
 
-apply from: rootProject.file("gradle/android_library_config.gradle")
+apply from: rootProject.file("gradle/library.gradle")
+group = 'com.github.mobillium'
 
 dependencies {
     api project(':core')

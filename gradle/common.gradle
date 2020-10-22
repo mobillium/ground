@@ -3,9 +3,9 @@ ext.module_package_id = "${module_group}.${module_name}"
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'org.jlleitschuh.gradle.ktlint'
+apply from: rootProject.file("gradle/ktlint.gradle")
 apply from: rootProject.file("dependencies.gradle")
-apply from: rootProject.file("gradle/spotless_plugin_config.gradle")
+apply from: rootProject.file("gradle/spotless.gradle")
 
 android {
     compileSdkVersion versions.compile_sdk

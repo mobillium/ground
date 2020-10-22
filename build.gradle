@@ -1,9 +1,5 @@
 buildscript {
     apply from: rootProject.file("dependencies.gradle")
-    ext {
-        kotlin_version = '1.4.10'
-    }
-
     repositories {
         google()
         jcenter()
@@ -16,6 +12,7 @@ buildscript {
         classpath deps.gradle_plugins.ktlint
         classpath deps.gradle_plugins.spotless
         classpath deps.gradle_plugins.safe_args
+        classpath deps.gradle_plugins.maven
     }
 }
 

@@ -28,9 +28,11 @@ import com.mobillium.navigation.markers.NavigationResult
  * @since 1.0.0
  */
 
-class BananaFragment : BaseFragment<FragmentBananaBinding, BananaViewModel>(
-    layoutId = R.layout.fragment_banana
-), NavigationResult {
+class BananaFragment :
+    BaseFragment<FragmentBananaBinding, BananaViewModel>(
+        layoutId = R.layout.fragment_banana
+    ),
+    NavigationResult {
 
     override fun createViewModel() = BananaViewModel()
 
