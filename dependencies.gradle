@@ -13,7 +13,8 @@ ext.deps = [
                 ktlint: "org.jlleitschuh.gradle:ktlint-gradle:9.3.0",
                 spotless: "com.diffplug.spotless:spotless-plugin-gradle:3.27.1",
                 safe_args: "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0",
-                maven: "com.github.dcendents:android-maven-gradle-plugin:2.1"
+                maven: "com.github.dcendents:android-maven-gradle-plugin:2.1",
+                detekt: ""
         ],
 
         kotlin: [

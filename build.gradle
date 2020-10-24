@@ -30,3 +30,5 @@ task installGitHook(type: Copy) {
 }
 
 tasks.getByPath(':sample:preBuild').dependsOn installGitHook
+tasks.getByPath(':core:preBuild').dependsOn installGitHook
+tasks.getByPath(':navigation:preBuild').dependsOn installGitHook
