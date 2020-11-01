@@ -2,6 +2,7 @@ ext.module_group = "com.mobillium.ground"
 ext.module_name = "navigation"
 
 apply from: rootProject.file("gradle/library.gradle")
+apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.mobillium'
 
 dependencies {
